@@ -38,5 +38,48 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'zh'
+
 gem 'devise'
 gem 'friendly_id', '~> 5.0.0'
+gem 'active_model_serializers'
+
+gem 'compass-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+
+gem 'ng-rails-csrf' # Optional
+gem 'angular-ujs'
+
+group :development, :test do
+  # help to kill N + 1 quesy
+  gem 'bullet'
+  gem 'rack-mini-profiler'
+
+  gem 'database_cleaner'
+  gem 'launchy'
+
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+
+  # gem 'xray-rails'
+  gem 'hirb'
+  gem 'hirb-unicode'
+
+  gem 'wirble'
+  gem 'annotate', '>=2.5.0'
+
+  gem 'guard-minitest'
+  gem 'factory_girl'
+
+  gem 'awesome_print'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+
+  gem 'spring-commands-rspec'
+end

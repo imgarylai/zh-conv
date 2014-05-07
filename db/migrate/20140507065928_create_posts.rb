@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :source
       t.text :result
       t.string :token
-      t.references :user, index: {:unique=>true}
+      t.references :user
       t.string :slug
 
       t.timestamps
