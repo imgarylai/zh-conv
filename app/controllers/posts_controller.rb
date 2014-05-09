@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_owner, only: [:edit, :destroy]
   # GET /posts
   # GET /posts.json
   def index
@@ -69,6 +70,12 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:source, :option)
+      params.require(:post).permit(:source, :option, :user_id)
+    end
+
+    def check_owner
+      if @post.user_id != current_user.id
+        redirect_to posts_path, notice: 'this is not your post'
+      end
     end
 end

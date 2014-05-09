@@ -1,5 +1,7 @@
 <h1>Listing posts</h1>
-
+<% if flash[:notice] %>
+  <div class="notice" ><%= flash[:notice] %></div>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -18,7 +20,7 @@
         <td><%= post.source %></td>
         <td><%= post.result %></td>
         <td><%= post.token %></td>
-        <td><%= post.user %></td>
+        <td><%= post.user.username %></td>
         <td><%= post.slug %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
