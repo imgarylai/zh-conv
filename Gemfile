@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'zh'
 gem 'devise'
 gem 'friendly_id', '~> 5.0.0'
 gem 'active_model_serializers'
@@ -47,6 +46,10 @@ group :development, :test do
   gem 'spring-commands-rspec'
 
   gem 'spring'
+  gem 'guard-livereload', require: false
+  gem 'xray-rails', '~> 0.1.14'
 end
 
 gem 'rails_12factor', group: :production
+
+gem 'zh'
