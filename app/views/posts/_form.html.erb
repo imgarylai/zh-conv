@@ -10,10 +10,17 @@
       </ul>
     </div>
   <% end %>
-
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
     <%= f.label :source %><br>
     <%= f.text_area :source %>
+  </div>
+  <div class="field">
+    <%= f.label :option %><br>
+    <%= f.radio_button :option, 'tw' %>tw
+    <%= f.radio_button :option, 'sg' %>sg
+    <%= f.radio_button :option, 'hk' %>hk
+    <%= f.radio_button :option, 'cn' %>cn
   </div>
   <div class="actions">
     <%= f.submit %>
