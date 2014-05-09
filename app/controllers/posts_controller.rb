@@ -25,7 +25,6 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    # @post = Post.new(post_params)
     @post = current_user.posts.create(post_params)
     respond_to do |format|
       if @post.save
@@ -71,7 +70,6 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:source, :option, :user_id)
-      # redirect_to action: action_name, id: @post.friendly_id, status: 301 unless @post.friendly_id == params[:id]
     end
 
     def check_owner

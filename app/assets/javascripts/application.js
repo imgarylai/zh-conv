@@ -15,3 +15,10 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(function() {
+  $('#translator_form').bind("ajax:success", function(event, data) {
+    var foobar = $('#foobar');
+    $("#result").html(data["result"]);
+  });
+});

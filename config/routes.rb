@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts
 
   namespace :api, defaults: { format: :json } do
-    post 'translate' => 'translator/translate'
+    post 'translate' => 'translator#translate'
   end
 
 end
