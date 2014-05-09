@@ -19,8 +19,9 @@ class Post < ActiveRecord::Base
   include Tokenable
 
   belongs_to :user
-  after_save :convert
+  before_save :convert
 
+  validates :source, :option, presence: true
   protected
 
   def convert
