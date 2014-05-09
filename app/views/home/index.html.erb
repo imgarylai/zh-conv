@@ -1,2 +1,20 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<div class='col-lg-6'>
+
+  <%= form_tag('/api/translate', remote: true, id: 'translator_form') do %>
+
+  <%= radio_button_tag 'location', 'tw', true %>台灣繁體
+  <%= radio_button_tag 'location', 'hk', true %>香港繁體
+  <%= radio_button_tag 'location', 'sg', true %>新加坡簡體
+  <%= radio_button_tag 'location', 'cn', true %>中國簡體
+
+  <%= text_area_tag 'source', '', class: 'form-control'  %>
+  <%= submit_tag 'submit', class: 'btn btn-default' %>
+  <% end %>
+
+</div>
+<div class='col-lg-6'>
+  <div id='result'>
+  </div>
+</div>
+
