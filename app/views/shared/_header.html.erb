@@ -11,12 +11,15 @@
     </div>
     <nav class='collapse navbar-collapse bs-navbar-collapse' role='navigation'>
       <ul class='nav navbar-nav'>
-        <li>
-
-        </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to '翻譯結果', posts_path  %>
+          </li>
+        <% end %>
       </ul>
       <ul class='nav navbar-nav navbar-right'>
         <% if user_signed_in? %>
+        <li><%= link_to "Hello #{current_user.username}!", '#'  %></li>
         <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
         <li><%= link_to 'Sign in', new_user_session_path %></li>

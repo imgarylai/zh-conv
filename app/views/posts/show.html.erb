@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Source:</strong>
-  <%= @post.source %>
-</p>
-
-<p>
-  <strong>Result:</strong>
-  <%= @post.result %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<div class=' col-md-6'>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">原文</h3>
+    </div>
+    <div class="panel-body">
+      <%= @post.source %>
+    </div>
+  </div>
+</div>
+<div class=' col-md-6'>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">結果</h3>
+    </div>
+    <div class="panel-body">
+      <%= @post.result %>
+    </div>
+  </div>
+</div>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
