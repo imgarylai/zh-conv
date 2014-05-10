@@ -53,3 +53,4 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'zh'
+gem 'zeroclipboard-rails', :github => 'Appsdeck/zeroclipboard-rails'

@@ -14,10 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require zeroclipboard
+//= require app
 //= require_tree .
-
-$(function() {
-  $('#translator_form').bind("ajax:success", function(event, data) {
-    $("#result").html(data["result"]);
-  });
-});

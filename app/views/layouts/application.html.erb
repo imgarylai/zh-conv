@@ -3,13 +3,16 @@
 <head>
   <title>ZhConv</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render 'shared/header' %>
-  <%= yield %>
-
   <%= render partial: "shared/flash_messages", flash: flash %>
+  <div class='container'>
+    <div class='row'>
+      <%= yield %>
+    </div>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
