@@ -34,7 +34,8 @@
                 title='copy to clipboard'
                 data-toggle="tooltip"
                 data-placement="bottom"
-                class='copy-button btn btn-default' type='button' data-clipboard-target="<%= post.token %>" >
+                class='copy-button btn btn-default' type='button'
+                data-clipboard-text="<%= post_url(post) %>" >
                   <%= fa_icon 'clipboard' %>
                 </button>
               </span>
